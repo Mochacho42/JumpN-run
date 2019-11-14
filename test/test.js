@@ -1,11 +1,3 @@
-// let canvas = document.getElementById('c1');
-// let ctx = canvas.getContext('2d');
-// let image = document.getElementById('sunset');
-//
-// image.addEventListener('load', function(){
-//     ctx.drawImage(image, 75, 25, 150, 100);
-// }, false);
-
 var myAudio = document.createElement("audio");
 myAudio.src = "medievaldance.mp3";
 myAudio.play();
