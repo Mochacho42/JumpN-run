@@ -7,9 +7,6 @@ canvas.height = 500;
 ctx.fillStyle = "black";
 ctx.fillRect(0, 0, canvas.width, canvas.height);
 document.body.appendChild(canvas);
-let w;
-let images = [];
-let currentimage = 0;
 
 for (w = 0; w< 5; w++){
     images[w] = new Image();
@@ -17,47 +14,12 @@ for (w = 0; w< 5; w++){
     console.log(images[w]);
 }
 
-<<<<<<< HEAD:jumpyjumpjump.js
-//player jump - input - left mouseclick
-let jumpPressed = false;
-
-function mouseDownHandler(e) {
-  jumpPressed = true;
-}
-
-//draw character
-function DrawCharacter() {
-  //Constructor
-  this.charHeight = 50;
-  this.charWidth = 25;
-  this.charX = 100;
-  this.charY = 350;
-  this.drawChar = function() {
-    ctx.beginPath();
-    //ctx.rect(this.charX, this.charY, this.charWidth, this.charHeight)
-    //ctx.fillStyle = "pink";
-
-    ctx.drawImage(images[parseInt(currentimage/10)], 100, 350, 100, 50);    
-    const interval = 100;
-    currentimage++;
-    if (currentimage == 50)
-      currentimage = 0;
-    ctx.fill();
-    ctx.closePath();
-  }
-  this.retStats = function() {
-    return this.charHeight, this.charWidth, this.charX, this.charY;
-  }
-}
-
 //draw ground
-=======
->>>>>>> 4c8a6b481ce2ba3f9f7afafd63acd61af25fd0df:scripts/main.js
 let groundHeight = 100;
 let groundWidth = 1000;
 
 let jumpPressed = false;
-document.addEventListener("click", function () { jumpPressed = true }, false );
+document.addEventListener("click", function () { jumpPressed = true; }, false );
 document.addEventListener("keydown", function () { if(event.code == "Space") { jumpPressed = true; } }, false );
 
 let str_counter = 0;
