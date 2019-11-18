@@ -7,6 +7,15 @@ canvas.height = 500;
 ctx.fillStyle = "black";
 ctx.fillRect(0, 0, canvas.width, canvas.height);
 document.body.appendChild(canvas);
+let w;
+let images = [];
+let currentimage = 0;
+
+for (w = 0; w< 5; w++){
+    images[w] = new Image();
+    images[w].src = "images/pika" + (w + 1) +".gif";
+    console.log(images[w]);
+}
 
 //player jump - input - left mouseclick
 let jumpPressed = false;
@@ -24,8 +33,14 @@ function DrawCharacter() {
   this.charY = 350;
   this.drawChar = function() {
     ctx.beginPath();
-    ctx.rect(this.charX, this.charY, this.charWidth, this.charHeight)
-    ctx.fillStyle = "pink";
+    //ctx.rect(this.charX, this.charY, this.charWidth, this.charHeight)
+    //ctx.fillStyle = "pink";
+
+    ctx.drawImage(images[parseInt(currentimage/10)], 100, 350, 100, 50);    
+    const interval = 100;
+    currentimage++;
+    if (currentimage == 50)
+      currentimage = 0;
     ctx.fill();
     ctx.closePath();
   }
