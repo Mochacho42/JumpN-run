@@ -8,20 +8,15 @@ ctx.fillStyle = "black";
 ctx.fillRect(0, 0, canvas.width, canvas.height);
 document.body.appendChild(canvas);
 
-//player jump - input - left mouseclick
-let jumpPressed = false;
-document.addEventListener("click", function () { jumpPressed = true }, false );
-document.addEventListener("keydown", function (e) { if(e.code == "Space") { jumpPressed = true; } }, false );
-
-function cool(e) {
-  if (e.code == "Space") {
-    jumpPressed = true;
-  }
-}
-
-//draw ground
 let groundHeight = 100;
 let groundWidth = 1000;
+
+let jumpPressed = false;
+document.addEventListener("click", function () { jumpPressed = true }, false );
+document.addEventListener("keydown", function () { if(event.code == "Space") { jumpPressed = true; } }, false );
+
+let str_counter = 0;
+let display_div = document.getElementById("display_div_id");
 
 function drawGround() {
   ctx.beginPath();
@@ -73,6 +68,7 @@ let obst = new Obstacles(0);
 let obst2 = new Obstacles(500);
 let character = new DrawCharacter();
 
+interval = setInterval(draw, 1);
 function draw() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   ctx.fillStyle = "black";
@@ -95,27 +91,7 @@ function draw() {
     x = -10;
     character.charY = 350;
     jumpPressed = false;
+    str_counter++;
+    display_div.innerHTML = str_counter;
   }
 }
-
-let interval = setInterval(draw, 1);
-
-let str_counter_0 = 0;
-let display_div = document.getElementById("display_div_id");
-
-  setInterval(function(){
-    // clear count
-    while (display_div.hasChildNodes()) {
-      display_div.removeChild(display_div.lastChild);
-    }
-    if((character.charX > obst.obsX + obst.obsWidth) || character.charX > obst2.obsX + obst2.obsWidth) {
-      str_counter_0++;// amélioration du système pour conter les points - le système actuel n'est pas élégant ni éxacte, evtl compter les points par raport à la difficulté des sauts
-    }
-    display_str = str_counter_0.toString();
-    for (let i = 0; i < display_str.length; i++) {
-      let new_span = document.createElement('span');
-      new_span.className = 'num_tiles';
-      new_span.innerText = display_str[i];
-      display_div.appendChild(new_span);
-    }
-  },200);
