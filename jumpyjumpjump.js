@@ -1,7 +1,7 @@
 // to-do: counter HTML/CSS, Interface etc.
 
-var canvas = document.createElement("canvas");
-var ctx = canvas.getContext("2d");
+let canvas = document.createElement("canvas");
+let ctx = canvas.getContext("2d");
 canvas.width = 1000;
 canvas.height = 500;
 ctx.fillStyle = "black";
@@ -9,7 +9,7 @@ ctx.fillRect(0, 0, canvas.width, canvas.height);
 document.body.appendChild(canvas);
 
 //player jump - input - left mouseclick
-var jumpPressed = false;
+let jumpPressed = false;
 
 function mouseDownHandler(e) {
   jumpPressed = true;
@@ -35,8 +35,8 @@ function DrawCharacter() {
 }
 
 //draw ground
-var groundHeight = 100;
-var groundWidth = 1000;
+let groundHeight = 100;
+let groundWidth = 1000;
 
 function drawGround() {
   ctx.beginPath();
@@ -73,7 +73,7 @@ function Obstacles(multiple_objects) {
     }
   }
   this.gameOver = function(charY, charHeight) {
-    var charStats = new DrawCharacter();
+    let charStats = new DrawCharacter();
     charStats.retStats();
     if(charY + charHeight > this.obsY && charStats.charX + charStats.charWidth >= this.obsX && charStats.charX < this.obsX + this.obsWidth) { //visual bug!!!
       alert("Game over!");
@@ -83,10 +83,10 @@ function Obstacles(multiple_objects) {
   }
 }
 
-var x = -10;
-var obst = new Obstacles(0);
-var obst2 = new Obstacles(500);
-var character = new DrawCharacter();
+let x = -10;
+let obst = new Obstacles(0);
+let obst2 = new Obstacles(500);
+let character = new DrawCharacter();
 
 function draw() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -102,7 +102,7 @@ function draw() {
   obst.gameOver(character.charY, character.charHeight);
   obst2.gameOver(character.charY, character.charHeight);
 
-  var z = Math.pow(x, 2)
+  let z = Math.pow(x, 2)
   if(jumpPressed && character.charY <= 350) {
     x += 0.1;
     character.charY = 2.5*z-5*x+50.5;
@@ -115,23 +115,23 @@ function draw() {
 }
 
 document.addEventListener("click", mouseDownHandler);
-var interval = setInterval(draw, 1);
+let interval = setInterval(draw, 1);
 
-var str_counter_0 = 0;
-var display_div = document.getElementById("display_div_id");
+let str_counter_0 = 0;
+let display_div = document.getElementById("display_div_id");
 
 function incrementCount(current_count){
   setInterval(function(){
     // clear count
     while (display_div.hasChildNodes()) {
-        display_div.removeChild(display_div.lastChild);
+      display_div.removeChild(display_div.lastChild);
     }
     if((character.charX > obst.obsX + obst.obsWidth) || character.charX > obst2.obsX + obst2.obsWidth) {
       str_counter_0++;// amélioration du système pour conter les points - le système actuel n'est pas élégant ni éxacte, evtl compter les points par raport à la difficulté des sauts
     }
     display_str = str_counter_0.toString();
-    for (var i = 0; i < display_str.length; i++) {
-      var new_span = document.createElement('span');
+    for (let i = 0; i < display_str.length; i++) {
+      let new_span = document.createElement('span');
       new_span.className = 'num_tiles';
       new_span.innerText = display_str[i];
       display_div.appendChild(new_span);
