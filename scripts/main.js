@@ -10,27 +10,12 @@ document.body.appendChild(canvas);
 
 //player jump - input - left mouseclick
 let jumpPressed = false;
+document.addEventListener("click", function () { jumpPressed = true }, false );
+document.addEventListener("keydown", function (e) { if(e.code == "Space") { jumpPressed = true; } }, false );
 
-function mouseDownHandler(e) {
-  jumpPressed = true;
-}
-
-//draw character
-function DrawCharacter() {
-  //Constructor
-  this.charHeight = 50;
-  this.charWidth = 25;
-  this.charX = 100;
-  this.charY = 350;
-  this.drawChar = function() {
-    ctx.beginPath();
-    ctx.rect(this.charX, this.charY, this.charWidth, this.charHeight)
-    ctx.fillStyle = "pink";
-    ctx.fill();
-    ctx.closePath();
-  }
-  this.retStats = function() {
-    return this.charHeight, this.charWidth, this.charX, this.charY;
+function cool(e) {
+  if (e.code == "Space") {
+    jumpPressed = true;
   }
 }
 
@@ -98,7 +83,6 @@ function draw() {
   obst2.drawObstacle();
   obst.moveObstacle(2);
   obst2.moveObstacle(2);
-  //console.log(obst.obsX);
   obst.gameOver(character.charY, character.charHeight);
   obst2.gameOver(character.charY, character.charHeight);
 
@@ -114,13 +98,11 @@ function draw() {
   }
 }
 
-document.addEventListener("click", mouseDownHandler);
 let interval = setInterval(draw, 1);
 
 let str_counter_0 = 0;
 let display_div = document.getElementById("display_div_id");
 
-function incrementCount(current_count){
   setInterval(function(){
     // clear count
     while (display_div.hasChildNodes()) {
@@ -137,4 +119,3 @@ function incrementCount(current_count){
       display_div.appendChild(new_span);
     }
   },200);
-}
