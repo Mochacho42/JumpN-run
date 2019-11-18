@@ -17,6 +17,7 @@ document.addEventListener("keydown", function () { if(event.code == "Space") { j
 
 let str_counter = 0;
 let display_div = document.getElementById("display_div_id");
+display_div.innerHTML = str_counter;
 
 function drawGround() {
   ctx.beginPath();
