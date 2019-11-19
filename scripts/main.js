@@ -4,15 +4,12 @@ let canvas = document.createElement("canvas");
 let ctx = canvas.getContext("2d");
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
-ctx.fillStyle = "black";
-ctx.fillRect(0, 0, canvas.width, canvas.height);
 document.body.appendChild(canvas);
 
 //draw ground
 let groundHeight = canvas.height/2;
 let groundWidth = canvas.width;
 
-let jumpPressed = false;
 document.addEventListener("click", function () { pikachu.jump(); }, false );
 document.addEventListener("keydown", function () { pikachu.jump(); }, false );
 document.addEventListener("keyup", function () { pikachu.down() }, false );
@@ -47,15 +44,6 @@ function draw() {
   obst.gameOver(pikachu.charY, pikachu.charHeight);
   obst2.gameOver(pikachu.charY, pikachu.charHeight);
 
-  let z = Math.pow(x, 2)
-  if(jumpPressed && pikachu.charY <= 500) {
-    x += 0.2;
-    pikachu.charY = 2.5*z-5*x+50.5;
-  }
-  //if (getDown || pikachu.charY == 500) {
-    //x -= 0.2;
-    //pikachu.charY = -(2.5*z-5*x+50.5);
-  //} 
   if(pikachu.charY > 500) {
     x = 0;
     pikachu.charY = 350;
