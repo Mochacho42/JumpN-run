@@ -26,7 +26,6 @@ function Obstacles(multiple_objects) {
   this.gameOver = function(charY, charHeight) {
     let charStats = new Character();
     if(charY + charHeight > this.obsY && charStats.charX + charStats.charWidth >= this.obsX && charStats.charX < this.obsX + this.obsWidth) { //visual bug!!!
-      alert("Game over!");
       document.location.reload();
       clearInterval(interval);
     }
