@@ -55,7 +55,7 @@ function Obstacles(multiple_objects) {
     }
   }
   this.gameOver = function(charY, charHeight) {
-    let charStats = new DrawCharacter();
+    let charStats = new Character();
     if(charY + charHeight > this.obsY && charStats.charX + charStats.charWidth >= this.obsX && charStats.charX < this.obsX + this.obsWidth) { //visual bug!!!
       alert("Game over!");
       document.location.reload();
@@ -67,14 +67,14 @@ function Obstacles(multiple_objects) {
 let x = 0;
 let obst = new Obstacles(0);
 let obst2 = new Obstacles(500);
-let pikachu = new DrawCharacter();
+let pikachu = new Character();
 
 interval = setInterval(draw, 1);
 function draw() {
   ctx.fillStyle = "black";
   ctx.fillRect(0, 0, canvas.width, canvas.height);
   drawGround();
-  pikachu.drawChar();
+  pikachu.draw();
   obst.drawObstacle();
   obst2.drawObstacle();
   obst.moveObstacle(2);
