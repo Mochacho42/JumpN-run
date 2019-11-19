@@ -1,23 +1,28 @@
-let w;
 let images = [];
 let currentimage = 0;
+let index = 0;
+const speed = 50;
+
+for (w = 0 ; w < 5 ; w++){
+  images[w] = new Image();
+  images[w].src = "images/pika" + w + ".png";
+  console.log(images[w]);
+}
 
 function DrawCharacter() {
-  //Constructor
   this.charHeight = 50;
   this.charWidth = 25;
   this.charX = 100;
   this.charY = 350;
-  this.drawChar = function() {
-    ctx.beginPath();
-    //ctx.rect(this.charX, this.charY, this.charWidth, this.charHeight)
-    //ctx.fillStyle = "pink";
 
-    ctx.drawImage(images[parseInt(currentimage/10)], 100, 350, 100, 50);    
-    const interval = 100;
+  this.drawChar = function() {
     currentimage++;
-    if (currentimage == 50)
-      currentimage = 0;
+    if (currentimage % speed == 0) {
+      index = (index + 1) % images.length;
+    }
+
+    ctx.beginPath();
+    ctx.drawImage(images[index], 100, 350, 100, 50);    
     ctx.fill();
     ctx.closePath();
   }
@@ -25,4 +30,3 @@ function DrawCharacter() {
     return this.charHeight, this.charWidth, this.charX, this.charY;
   }
 }
-

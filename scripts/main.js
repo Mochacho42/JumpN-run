@@ -8,12 +8,6 @@ ctx.fillStyle = "black";
 ctx.fillRect(0, 0, canvas.width, canvas.height);
 document.body.appendChild(canvas);
 
-for (w = 0; w< 5; w++){
-    images[w] = new Image();
-    images[w].src = "images/pika" + (w + 1) +".gif";
-    console.log(images[w]);
-}
-
 //draw ground
 let groundHeight = 100;
 let groundWidth = 1000;
