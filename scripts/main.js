@@ -18,7 +18,7 @@ document.addEventListener("keydown", function () { if(event.code == "Space") { j
 
 let str_counter = 0;
 let display_div = document.getElementById("display_div_id");
-display_div.innerHTML = str_counter;
+display_div.innerText = str_counter;
 
 function drawGround() {
   ctx.beginPath();
@@ -56,7 +56,6 @@ function Obstacles(multiple_objects) {
   }
   this.gameOver = function(charY, charHeight) {
     let charStats = new DrawCharacter();
-    charStats.retStats();
     if(charY + charHeight > this.obsY && charStats.charX + charStats.charWidth >= this.obsX && charStats.charX < this.obsX + this.obsWidth) { //visual bug!!!
       alert("Game over!");
       document.location.reload();
@@ -65,14 +64,13 @@ function Obstacles(multiple_objects) {
   }
 }
 
-let x = -10;
+let x = 0;
 let obst = new Obstacles(0);
 let obst2 = new Obstacles(500);
 let character = new DrawCharacter();
 
 interval = setInterval(draw, 1);
 function draw() {
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
   ctx.fillStyle = "black";
   ctx.fillRect(0, 0, canvas.width, canvas.height);
   drawGround();
@@ -90,10 +88,10 @@ function draw() {
     character.charY = 2.5*z-5*x+50.5;
   }
   if(character.charY > 350) {
-    x = -10;
+    x = 0;
     character.charY = 350;
     jumpPressed = false;
     str_counter++;
-    display_div.innerHTML = str_counter;
+    display_div.innerText = str_counter;
   }
 }
