@@ -67,29 +67,29 @@ function Obstacles(multiple_objects) {
 let x = 0;
 let obst = new Obstacles(0);
 let obst2 = new Obstacles(500);
-let character = new DrawCharacter();
+let pikachu = new DrawCharacter();
 
 interval = setInterval(draw, 1);
 function draw() {
   ctx.fillStyle = "black";
   ctx.fillRect(0, 0, canvas.width, canvas.height);
   drawGround();
-  character.drawChar();
+  pikachu.drawChar();
   obst.drawObstacle();
   obst2.drawObstacle();
   obst.moveObstacle(2);
   obst2.moveObstacle(2);
-  obst.gameOver(character.charY, character.charHeight);
-  obst2.gameOver(character.charY, character.charHeight);
+  obst.gameOver(pikachu.charY, pikachu.charHeight);
+  obst2.gameOver(pikachu.charY, pikachu.charHeight);
 
   let z = Math.pow(x, 2)
-  if(jumpPressed && character.charY <= 350) {
+  if(jumpPressed && pikachu.charY <= 350) {
     x += 0.1;
-    character.charY = 2.5*z-5*x+50.5;
+    pikachu.charY = 2.5*z-5*x+50.5;
   }
-  if(character.charY > 350) {
+  if(pikachu.charY > 350) {
     x = 0;
-    character.charY = 350;
+    pikachu.charY = 350;
     jumpPressed = false;
     str_counter++;
     display_div.innerText = str_counter;

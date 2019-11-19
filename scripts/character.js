@@ -16,7 +16,7 @@ function DrawCharacter() {
 
   this.drawChar = function() {
     ctx.beginPath();
-    ctx.drawImage(images[index], 100, 350 - x, 100, 50);    
+    ctx.drawImage(images[index], 100, 350 - (x * 10), 100, 50);    
     ctx.fill();
     ctx.closePath();
 
@@ -24,7 +24,8 @@ function DrawCharacter() {
       index = (index + 1) % images.length;
     }
   }
-  this.retStats = function() {
-    return this.charHeight, this.charWidth, this.charX, this.charY;
+
+  this.jumpChar = function() {
+    console.log("saute !");
   }
 }
