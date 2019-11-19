@@ -40,11 +40,4 @@ function draw() {
   obst2.moveObstacle(2);
   obst.gameOver(pikachu.charY, pikachu.charHeight);
   obst2.gameOver(pikachu.charY, pikachu.charHeight);
-
-  if(pikachu.charY > 500) {
-    x = 0;
-    pikachu.charY = 350;
-    jumpPressed = false;
-    str_counter++;
-  }
 }
