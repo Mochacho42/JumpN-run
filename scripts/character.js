@@ -1,7 +1,7 @@
 let images = [];
 let index = 0;
 let elapsed = 0;
-const speed = 50;
+const speed = 25;
 
 for (w = 0 ; w < 5 ; w++) {
   images[w] = new Image();
