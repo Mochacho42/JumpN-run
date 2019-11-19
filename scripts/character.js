@@ -27,5 +27,9 @@ function Character() {
 
   this.jump = function() {
     console.log("saute !");
+    jumpPressed = true;
+  }
+  this.down = function() {
+    getDown = true;
   }
 }
