@@ -25,7 +25,7 @@ function DrawCharacter() {
     }
   }
 
-  this.jumpChar = function() {
+  this.jump = function() {
     console.log("saute !");
   }
 }

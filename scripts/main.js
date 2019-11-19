@@ -13,8 +13,8 @@ let groundHeight = 100;
 let groundWidth = 1000;
 
 let jumpPressed = false;
-document.addEventListener("click", function () { jumpPressed = true; }, false );
-document.addEventListener("keydown", function () { if(event.code == "Space") { jumpPressed = true; } }, false );
+document.addEventListener("click", function () { pikachu.jump(); }, false );
+document.addEventListener("keydown", function () { pikachu.jump(); }, false );
 
 let str_counter = 0;
 let display_div = document.getElementById("display_div_id");
