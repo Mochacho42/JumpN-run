@@ -1,11 +1,11 @@
-let canvas = document.getElementById("main");
-let ctx = canvas.getContext("2d");
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
+let mainCanvas = document.getElementById("main");
+let ctx = mainCanvas.getContext("2d");
+mainCanvas.width = window.innerWidth;
+mainCanvas.height = window.innerHeight;
 
 //draw ground
-let groundHeight = canvas.height/2;
-let groundWidth = canvas.width;
+let groundHeight = mainCanvas.height/2;
+let groundWidth = mainCanvas.width;
 
 document.addEventListener("click", function () { pikachu.jump(); }, false );
 document.addEventListener("keydown", function () { if (event.code == "Space") pikachu.jump(); }, false );
@@ -28,7 +28,7 @@ let pikachu = new Character();
 interval = setInterval(draw, 1);
 function draw() {
   ctx.fillStyle = "black";
-  ctx.fillRect(0, 0, canvas.width, canvas.height);
+  ctx.fillRect(0, 0, mainCanvas.width, mainCanvas.height);
   ctx.fillStyle = "white";
   ctx.font = "16px monospace";
   ctx.fillText(str_counter, 0, 14);

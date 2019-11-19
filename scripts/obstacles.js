@@ -2,8 +2,8 @@ function Obstacles(multiple_objects) {
   //constructor
   this.obsHeight = Math.floor((Math.random() * 150) + 50);
   this.obsWidth = Math.floor((Math.random() * 150) + 50);
-  this.obsY = canvas.height - groundHeight - this.obsHeight;
-  this.obsX = canvas.width + multiple_objects;
+  this.obsY = mainCanvas.height - groundHeight - this.obsHeight;
+  this.obsX = mainCanvas.width + multiple_objects;
   //this.obsSpeed = Math.random();
   this.drawObstacle = function() {
     ctx.beginPath();
@@ -19,8 +19,8 @@ function Obstacles(multiple_objects) {
     else if (this.obsX < 0){
       this.obsHeight = Math.floor((Math.random() * 150) + 100);
       this.obsWidth = Math.floor((Math.random() * 100) + 50);
-      this.obsY = canvas.height - groundHeight - this.obsHeight;
-      this.obsX = canvas.width + 10;
+      this.obsY = mainCanvas.height - groundHeight - this.obsHeight;
+      this.obsX = mainCanvas.width + 10;
     }
   }
   this.gameOver = function(charY, charHeight) {

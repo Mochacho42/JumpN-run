@@ -1,4 +1,8 @@
-#image
-{
-    height: 120px;
+#image {
+  height: 120px;
+}
+
+#main {
+  width: 100%; 
+  height: 100%;
 }
