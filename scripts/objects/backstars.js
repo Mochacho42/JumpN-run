@@ -3,10 +3,10 @@ function Star() {
   this.physics.setForce(-9, 0);
 
   this.drawStar = function() {
-    this.physics.applyForce();
+    this.physics.applyPhysics();
       
     ctx.beginPath();
-    ctx.arc(this.physics.x, this.physics.y, 10, 0, Math.PI*2);
+    ctx.arc(this.physics.xPos, this.physics.yPos, 10, 0, Math.PI*2);
     ctx.fillStyle = "yellow";
     ctx.fill();
     ctx.closePath();

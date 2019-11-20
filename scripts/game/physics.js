@@ -1,6 +1,6 @@
 function Physics(initialXPos, initialYPos) {
-  this.x = initialXPos;
-  this.y = initialYPos;
+  this.xPos = initialXPos;
+  this.yPos = initialYPos;
   this.xVel = 0;
   this.yVel = 0;
 
@@ -9,8 +9,8 @@ function Physics(initialXPos, initialYPos) {
     this.yVel = y;
   }
 
-  this.applyForce = function() {
-    this.x += this.xVel;
-    this.y += this.yVel;
+  this.applyPhysics = function() {
+    this.xPos += this.xVel;
+    this.yPos += this.yVel;
   }
 }

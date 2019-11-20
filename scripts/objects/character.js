@@ -19,14 +19,14 @@ function Character() {
 
   this.draw = function() {
 
-    this.phy.applyForce();
+    this.phy.applyPhysics();
 
     if (elapsed++ % speed == 0) {
       index = (index + 1) % images.length;
     }
 
     ctx.beginPath();
-    ctx.drawImage(images[index], this.phy.x, this.phy.y, images[index].width/4, images[index].height/4);    
+    ctx.drawImage(images[index], this.phy.xPos, this.phy.yPos, images[index].width/4, images[index].height/4);    
     ctx.fill();
     ctx.closePath();
   }
