@@ -24,6 +24,7 @@ let y = 0;
 let obst = new Obstacles(0);
 let obst2 = new Obstacles(500);
 let pikachu = new Character();
+let star = new Star();
 
 interval = setInterval(draw, 1);
 function draw() {
@@ -38,7 +39,8 @@ function draw() {
   obst2.drawObstacle();
   obst.moveObstacle(2);
   obst2.moveObstacle(2);
-  stars();
+  star.drawStar();
+  star.moveStar();
   obst.gameOver(pikachu.charY, pikachu.charHeight);
   obst2.gameOver(pikachu.charY, pikachu.charHeight);
 }

@@ -1,19 +1,20 @@
-function stars()
+function Star()
 {
-    var starx = mainCanvas.width;
-    var stary = rand(mainCanvas.height - mainCanvas.height/2.5);
-    var dy = -2;
+let starx = mainCanvas.width;
+let stary = rand(mainCanvas.height - mainCanvas.height/2.5);
+let dx = -9;
 
-    function drawStar() {
+this.drawStar = function()  
+    {
         ctx.beginPath();
         ctx.arc(starx, stary, 10, 0, Math.PI*2);
-        ctx.fillStyle = "gold";
+        ctx.fillStyle = "yellow";
         ctx.fill();
         ctx.closePath();
     }
 
-    function moveStar() {
-        drawStar();
-        stary += dy;
+this.moveStar = function()  
+    {
+        starx += dx;
     }
 }
