@@ -33,5 +33,5 @@ function draw() {
   ctx.fillText(str_counter, 0, 14);
   drawGround();
   pikachu.draw();
-  star.drawStar();
+  star.draw();
 }
