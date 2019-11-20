@@ -20,7 +20,7 @@ function drawGround() {
   ctx.closePath();
 }
 
-let x = 0;
+let y = 0;
 let obst = new Obstacles(0);
 let obst2 = new Obstacles(500);
 let pikachu = new Character();

@@ -12,9 +12,9 @@ function Obstacles(multiple_objects) {
     ctx.fill();
     ctx.closePath();
   }
-  this.moveObstacle = function(x) {
+  this.moveObstacle = function(y) {
     if(this.obsX >= -this.obsWidth) {
-      this.obsX -= x;
+      this.obsX -= y;
     }
     else if (this.obsX < 0){
       this.obsHeight = Math.floor((Math.random() * 150) + 100);

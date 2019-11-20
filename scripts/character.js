@@ -16,21 +16,21 @@ function Character() {
 
   this.draw = function() {
     ctx.beginPath();
-    ctx.drawImage(images[index], 100, 350 - x, 100, 50);    
+    ctx.drawImage(images[index], 100, 350 - y, 100, 50);    
     ctx.fill();
     ctx.closePath();
 
     if (elapsed++ % speed == 0) {
       index = (index + 1) % images.length;
     }
-    while(x > groundHeight) {
-      x--;
+    while(y > groundHeight) {
+      y--;
     }
   }
 
   this.jump = function() {
     str_counter++;
     console.log("saute !");
-    x += 10;
+    y += 10;
   }
 }
