@@ -40,7 +40,6 @@ function draw() {
   obst.moveObstacle(2);
   obst2.moveObstacle(2);
   star.drawStar();
-  star.moveStar();
   obst.gameOver(pikachu.charY, pikachu.charHeight);
   obst2.gameOver(pikachu.charY, pikachu.charHeight);
 }
