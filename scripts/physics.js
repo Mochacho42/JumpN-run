@@ -1,17 +1,16 @@
-function Physics(x, y) {
-  this.x = x;
-  this.y = y;
+function Physics(initialXPos, initialYPos) {
+  this.x = initialXPos;
+  this.y = initialYPos;
   this.xVel = 0;
   this.yVel = 0;
 
-  let setForce = function (x, y) {
-    this.xVel += x;
-    this.yVel += y;
+  this.setForce = function (x, y) {
+    this.xVel = x;
+    this.yVel = y;
   }
 
-  let applyForce = function() {
+  this.applyForce = function() {
     this.x += this.xVel;
     this.y += this.yVel;
   }
-
 }
