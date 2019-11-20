@@ -15,8 +15,6 @@
 
 * Rendre la page encore plus « responsive »
   * Les positions des objets doivent dépendre de la taille de la fenêtre.
-  * Retirer les bordures blanches autour du `canvas`.
-  * Se débarrasser des scrollbars pour que la page ne soit
   de la taille de la fenêtre).
 
 * Intégrer un fond. Potentiellement animé ?
