@@ -15,17 +15,14 @@ function Character() {
   this.charY = 350;
 
   this.draw = function() {
-    ctx.beginPath();
-    ctx.drawImage(images[index], 100, 350 - y, 100, 50);    
-    ctx.fill();
-    ctx.closePath();
-
     if (elapsed++ % speed == 0) {
       index = (index + 1) % images.length;
     }
-    while(y > groundHeight) {
-      y--;
-    }
+
+    ctx.beginPath();
+    ctx.drawImage(images[index], 100, 350 - y, images[index].width/4, images[index].height/4);    
+    ctx.fill();
+    ctx.closePath();
   }
 
   this.jump = function() {

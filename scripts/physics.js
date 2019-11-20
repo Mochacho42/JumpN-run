@@ -10,7 +10,8 @@ function Physics(x, y) {
   }
 
   let applyForce = function() {
-
+    this.x += this.xVel;
+    this.y += this.yVel;
   }
 
 }
