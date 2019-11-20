@@ -12,6 +12,10 @@ document.addEventListener("keydown", function () { if (event.code == "Space") pi
 
 let str_counter = 0;
 
+function rand(max) {
+  return Math.floor(Math.random() * Math.floor(max));
+}
+
 function drawGround() {
   ctx.beginPath();
   ctx.rect(0, 400, groundWidth, groundHeight);
