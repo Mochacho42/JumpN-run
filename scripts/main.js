@@ -1,7 +1,7 @@
 let mainCanvas = document.getElementById("main");
 let ctx = mainCanvas.getContext("2d");
-mainCanvas.width = window.innerWidth;
-mainCanvas.height = window.innerHeight;
+mainCanvas.width = screen.availWidth;
+mainCanvas.height = screen.availHeight;
 
 //draw ground
 let groundHeight = mainCanvas.height/2;
