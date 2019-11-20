@@ -21,8 +21,6 @@ function drawGround() {
 }
 
 let y = 0;
-let obst = new Obstacles(0);
-let obst2 = new Obstacles(500);
 let pikachu = new Character();
 let star = new Star();
 
@@ -35,11 +33,5 @@ function draw() {
   ctx.fillText(str_counter, 0, 14);
   drawGround();
   pikachu.draw();
-  obst.drawObstacle();
-  obst2.drawObstacle();
-  obst.moveObstacle(2);
-  obst2.moveObstacle(2);
   star.drawStar();
-  obst.gameOver(pikachu.charY, pikachu.charHeight);
-  obst2.gameOver(pikachu.charY, pikachu.charHeight);
 }
