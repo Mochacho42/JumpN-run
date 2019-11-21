@@ -14,10 +14,9 @@ function Character() {
   this.charX = 100;
   this.charY = 350;
 
-  this.phy = new Physics(mainCanvas.width/2, mainCanvas.height/2, 0.99);
+  this.phy = new Physics(mainCanvas.width/2, mainCanvas.height/2, 5 );
 
   this.draw = function() {
-
     this.phy.applyPhysics();
 
     if (elapsed++ % speed == 0) {
@@ -31,8 +30,7 @@ function Character() {
   }
 
   this.jump = function() {
-    this.phy.setForce(rand(10) - 5, rand(10) - 5);
+    this.phy.setForce(rand(5) - 5, rand(5) - 5);
     str_counter++;
-    y += 10;
   }
 }

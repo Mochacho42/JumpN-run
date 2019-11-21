@@ -1,4 +1,4 @@
-function Physics(x, y, friction = 1) {
+function Physics(x, y, friction = 0) {
   this.xPos = x;
   this.yPos = y;
   this.xVel = 0;
@@ -11,8 +11,8 @@ function Physics(x, y, friction = 1) {
   }
 
   this.applyPhysics = function() {
-    this.xVel *= this.friction;
-    this.yVel *= this.friction;
+    this.xVel -= this.friction * this.xVel / 100;
+    this.yVel -= this.friction * this.yVel / 100;
     this.xPos += this.xVel;
     this.yPos += this.yVel;
   }

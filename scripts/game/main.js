@@ -13,14 +13,10 @@ document.addEventListener("keydown", function () { if (event.code == "Space") pi
 let str_counter = 0;
 
 function drawGround() {
-  ctx.beginPath();
-  ctx.rect(0, 400, groundWidth, groundHeight);
   ctx.fillStyle = "green";
-  ctx.fill();
-  ctx.closePath();
+  ctx.fillRect(0, 400, groundWidth, groundHeight);
 }
 
-let y = 0;
 let pikachu = new Character();
 let star = new Star();
 
